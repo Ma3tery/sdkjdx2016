@@ -40,13 +40,15 @@ public class UserAction {
 
     @RequestMapping("/findAllUser.do")
     @ResponseBody
-    public Map<String, Object> findAllUser(int page, int pageSize) {
-        List<Map<String, Object>> list= userService.findAllUser(page,pageSize);
+    public Map<String, Object> findAllUser(int page, int limit) {
+        System.out.println(page+","+limit);
+        List<Map<String, Object>> list= userService.findAllUser(page,limit);
         System.out.println(list);
+        Map<String, Object> userCount = userService.findUserCount();
         Map map = new HashMap();
         map.put("code",0);
         map.put("msg","用户信息");
-        map.put("count",list.size());//用户表中总记录数
+        map.put("count",userCount.get("count"));//用户表中总记录数
         map.put("data",list);
 
 
