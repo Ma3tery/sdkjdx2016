@@ -15,6 +15,7 @@
         function loadUserData() {
             var table = layui.table;
             table.render({
+                toolbar:"#toolbar",
                 elem: "#userInfoList",
                 url: "user/findAllUser.do",
                 title: "用户信息表",
@@ -84,9 +85,17 @@
     </script>
 </head>
 <body>
+
 <div class="layui-elem-quote">
     用户管理功能
 </div>
+<script type="text/html" id="toolbar">
+<a href="" class="layui-btn layui-btn-danger">添加用户</a>
+<a href="" class="layui-btn layui-btn-warm">删除用户</a>
+    <input type="text" class="layui-input-block" placeholder="请输入要查询的信息" >
+<a href="" class="layui-btn layui-btn-warm"><span class="layui-icon layui-icon-search"></span></a>
+</script>
+
 <table class="layui-table" id="userInfoList">
 </table>
 <!-- <tr>
