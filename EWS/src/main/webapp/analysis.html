@@ -3,8 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="layui3.4/css/layui.css"/>
+    <script type="text/javascript" src="jquery3.4.1/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="layui3.4/layui.all.js"></script>
+    <script type="text/javascript" src="echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            bar();
+        });
+        function bar() {
+            var mychart=echarts.init(document.getElementById("bar"));
+            var mychart1=echarts.init(document.getElementById("bar1"));
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: 'ECharts 入门示例'
+                },
+                tooltip: {},
+                legend: {
+                    data:['销量']
+                },
+                xAxis: {
+                    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20]
+                }]
+            };
+            mychart.setOption(option);
+            mychart1.setOption(option);
+
+        }
+    </script>
 </head>
 <body>
-统计图表
+<div class="row">
+    <div class="layui-col-xs6">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                角色数量统计-柱状图
+            </div>
+            <div class="layui-card-body" id="bar" style="/*background-color*/:gray;height: 400px;width: 100%">
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-xs6">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                角色数量统计-柱状图
+            </div>
+            <div class="layui-card-body" id="bar1" style="/*background-color*/:orange;height: 400px;width: 100%">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="layui-col-xs6">
+        4234
+    </div>
+    <div class="layui-col-xs6">
+        423423
+    </div>
+</div>
+<script type="text/javascript" src="js/echarts.min.js"></script>
 </body>
 </html>

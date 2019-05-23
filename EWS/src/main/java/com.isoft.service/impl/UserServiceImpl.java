@@ -40,4 +40,9 @@ e.printStackTrace();
     public Map<String, Object> findUserCount() {
         return userDAO.findUserCount();
     }
+
+    @Override
+    public int deleteUserInfoById(int id) {
+        return userDAO.deleteUserInfoById(id);
+    }
 }

@@ -14,4 +14,7 @@
     <select id="findUserCount" resultType="map">
         SELECT count(*) as `count` from tb_user;
     </select>
+    <delete id="deleteUserInfoById" parameterType="int">
+        delete from tb_user where id=#{id}
+    </delete>
 </mapper>
