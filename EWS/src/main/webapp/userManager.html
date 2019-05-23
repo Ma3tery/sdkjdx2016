@@ -5,51 +5,32 @@
     <title>用户管理</title>
     <link rel="stylesheet" href="layui3.4/css/layui.css"/>
     <script type="text/javascript" src="jquery3.4.1/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="js/echarts.all.js"></script>
     <script type="text/javascript" src="layui3.4/layui.all.js"></script>
+
     <script type="text/javascript">
         $(function () {
             loadUserData();
         });
-        function openUserInfoEdit(id,uname,email,role) {
-            sessionStorage.setItem("id",id);
-            sessionStorage.setItem("email",email);
+
+        function openUserInfoEdit(id,uname,role,email) {
+/*            sessionStorage.setItem("id",id);
             sessionStorage.setItem("uname",uname);
             sessionStorage.setItem("role",role);
-            layer.open({
-
-                    type:1,
-                    title:"修改用户信息",
-                    btn:["确认修改","取消"],
-                    content:$("#editUserInfo").html(),
-                    area:['400px','350px'],
-                    yes:function (index) {
-                        layer.msg("text");
-                    }
-
-
-                }
-
-            );
-            $("#id").val(id);
-            $("#uname").val(uname);
-            $("#email").val(email);
-            $("#role").val(role);
+            sessionStorage.setItem("email",email);*/
+             layer.open({
+               type:1,
+               title:"修改用户信息",
+               btn:["确认修改","取消"],
+               content:$("#editUserInfo").html(),
+               area:['400px','350px'],
+               yes:function (index) {
+                   layer.msg("test");
+               }
+           });
+            //给文本框赋值
+            //$("#uname").val(sessionStorage.getItem("uname"));
         }
 
-        function showUserEdit() {
-            layer.open({
-                type: 1,
-                title: "tt",
-                btn:["aaa","bbb"],
-                area: ['200px', '150px'],//弹出框大小
-                content: $("#id").html(),
-                yes:function (index) {
-                    layer.closeAll();
-                    alert("aaaa");
-                }
-            });
-        }
 
         function deleteUserInfoById(id) {
             layer.confirm("是否真的要删除本记录?", {icon: 3, title: "警告"}, function (index) {
@@ -133,16 +114,16 @@
                             title: "操作",
                             align: "center",
                             templet: function (row) {
-                                /*var arr=Array();
-                                arr[0]=row.id;
-                                arr[1]=row.uname;
-                                arr[2]=row.email;
-                                arr[3]=row.role;*/
+                                /* var arr = new Array();
+                                arr[0] = row.id;
+                                arr[1] = row.uname;
+                                arr[2] = row.email;
+                                arr[3] = row.role;*/
                                 var edit = '<a href="javascript:openUserInfoEdit(' + row.id+",'"+row.uname+"','"+row.role+"','"+row.email + '\');"   title="编辑">' +
-                                    "<span style='font-size: 25px; color:cyan' class='layui-icon layui-icon-util'></span></a>"
-                                var del = '<a href="javaScript:deleteUserInfoById('+row.id+')"  title="删除">' +
-                                    "<span style='font-size: 25px; color: red' class='layui-icon layui-icon-delete'></span></a>"
-                                return edit + "||" + del;
+                                    "<span style='font-size: 25px;color:blue' class='layui-icon layui-icon-util'></span></a>"
+                                var del = '<a href="javaScript:deleteUserInfoById(' + row.id + ')"  title="删除">' +
+                                    "<span style='font-size: 25px;color: red' class='layui-icon layui-icon-delete'></span></a>"
+                                return edit + "|" + del;
                             }
                         }
                     ]
@@ -165,7 +146,7 @@
 </script>
 <table class="layui-table" id="userInfoList">
 </table>
-<div align="center" id="editUserInfo" style="display: none" style="width: 300px">
+<div align="center" id="editUserInfo"  style="display: none;width: 300px">
     <br>
     <center>
         <h2 >修改用户信息</h2>
@@ -201,7 +182,5 @@
         </div>
     </form>
 </div>
-
 </body>
-
 </html>

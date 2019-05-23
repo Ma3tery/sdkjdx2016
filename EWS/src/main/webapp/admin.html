@@ -14,13 +14,10 @@
         $("#mainFrame").load("analysis.html");
     }
     function exit() {
-        layer.confirm("是否真的退出系统？",{title:"退出提示",btn:["残忍离开","继续使用"]},function (index) {
-
-           // alert(index);
-
-            if(index==index){
-                window.location.href="index.html";
-            }
+        layer.confirm("是否真的要退出系统?",{title:"退出提示",btn:["残忍离开","继续使用"]},function (index) {
+          if(index==2){
+          window.location.href="index.html";
+          }
         })
     }
 </script>
@@ -55,7 +52,7 @@
                     <dd><a href=""><span class="layui-icon layui-icon-password"></span> 个人中心</a> 修改密码</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="javascript:exit()">退出</a></li>
+            <li class="layui-nav-item"><a href="javaScript:exit()">退出</a></li>
         </ul>
     </div>
 
@@ -64,31 +61,31 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">用户管理</a>
+                    <a class="" href="javascript:;"><span class="layui-icon layui-icon-user"></span> 用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:loadUsermanagerPage();"><span class="layui-icon layui-icon-about"></span> 用户管理</a></dd>
-                        <dd><a href="javascript:;loadAnalysisPage()"><span class="layui-icon layui-icon-app"></span> 统计分析</a></dd>
+                        <dd><a href="javascript:loadUsermanagerPage();"><span class="layui-icon layui-icon-group"></span> 用户管理</a></dd>
+                        <dd><a href="javascript:;loadAnalysisPage()"><span class="layui-icon layui-icon-chart-screen"></span> 统计分析</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">医疗设备管理</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;"><span class="layui-icon layui-icon-app"></span> 医疗设备管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">设备管理</a></dd>
-                        <dd><a href="javascript:;">统计分析</a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-engine"></span> 设备管理</a></dd>
+                        <dd><a href="javascript:;"> <span class="layui-icon layui-icon-chart-screen"></span>统计分析</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">检修管理</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;"><span class="layui-icon layui-icon-user"></span> 检修管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">设备检修</a></dd>
-                        <dd><a href="javascript:;">检修日志</a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-user"></span> 设备检修</a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-user"></span> 检修日志</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">系统管理</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;"><span class="layui-icon layui-icon-user"></span> 系统管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">权限分配</a></dd>
-                        <dd><a href="javascript:;">注销系统</a></dd>
+                        <dd><a href="javascript:;"> <span class="layui-icon layui-icon-user"></span> 权限分配</a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-user"></span> 注销系统</a></dd>
                     </dl>
                 </li>
 

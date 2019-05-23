@@ -20,30 +20,10 @@
         function register() {
             var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
             var email=jQuery("#email").val();
-            var r_upwd = $("#r_upwd").val();
-            var r_uname = $("#r_uname").val();
-            var cr_upwd=$("#cr_upwd").val();
-            if(r_uname.length==0){
-                layer.tips("用户名不能为空，请检查!", "#r_uname", {time: 3000, tips: [2, "#FF0000"]});
-                return;
-            }
-            if(r_upwd.length==0){
-                layer.tips("密码不能为空，请检查!", "#r_upwd", {time: 3000, tips: [2, "#FF0000"]});
-                return;
-            }
-            if(r_upwd.length<6){
-                layer.tips("密码长度不能小于6位，请检查!", "#r_upwd", {time: 3000, tips: [2, "#FF0000"]});
-                return;
-            }
-            if(r_upwd!=cr_upwd){
-                layer.tips("两次输入的密码不一致，请检查!", "#cr_upwd", {time: 3000, tips: [2, "#FF0000"]});
-                return;
-            }
             if(!reg.test(email)){
                 layer.tips("Email输入有误，请检查!", "#email", {time: 3000, tips: [2, "#FF0000"]});
                 return;
             }
-
             $.ajax({
                 url: "user/register.do",
                 data: {
@@ -189,7 +169,7 @@
 </center>
 <div class="layui-footer" align="center">
     <br>
-    &copy;2018-2019 山东科技大学 ： Mast3ry
+    &copy;2018-2019 融创软通科技股份
 </div>
 </body>
 </html>

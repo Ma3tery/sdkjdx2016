@@ -61,6 +61,14 @@ public class UserDAOImpl implements IUserDAO {
     }
 
     @Override
+    public List<Map<String, Object>> userTotal() {
+        SqlSession sqlSession = sessionFactoryBean.openSession(true);
+        String statement = "com.isoft.mapping.userMapper.userTotal";
+        List<Map<String, Object>> list = sqlSession.selectList(statement);
+        return list;
+    }
+
+    @Override
     public Map<String, Object> findUserCount() {
         try {
             SqlSession sqlSession = sessionFactoryBean.openSession(true);
